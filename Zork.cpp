@@ -2,17 +2,36 @@
 //
 
 #include <iostream>
+#include <Windows.h>
 #include"Room.h"
 #include"Map.h"
+#include"GameBoard.h"
 
 using namespace std;
 
 int main(){
-    Room* r = new Room("Primera", "Primera descripción");
     Map tablero;
 
-    tablero.AddRoom(r);
+    tablero.AddRoom(new Room("Primera", "Habitación de inicio"));
+    tablero.AddRoom(new Room("Segunda", "Habitación Norte"));
+    tablero.AddRoom(new Room("Primera", "Habitación Centro"));
+    tablero.AddRoom(new Room("Primera", "Habitación Este"));
+    tablero.AddRoom(new Room("Primera", "Habitación Sur"));
+
+    GameBoard gameBoard = GameBoard(tablero.getRooms());
+    tablero.setActiveRoom(gameBoard.getFirstRoom());
+    SetConsoleOutputCP(CP_UTF8);
     cout << tablero.getNameRoom();
+
+    if(tablero.goNorth() != NULL)
+        cout << tablero.getNameRoom();
+    else
+        cout << "La habitacion no tiene conexiones al norte\n";
+
+    if (tablero.goEast() != NULL)
+        cout << tablero.getNameRoom();
+    else
+        cout << "La habitacion no tiene conexiones al Este\n";
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
