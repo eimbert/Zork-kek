@@ -142,12 +142,14 @@
     <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="TypeCharacter.cpp" />
     <ClCompile Include="Zork.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="TypeCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

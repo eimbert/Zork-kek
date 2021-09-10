@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <Windows.h>
+#include"TypeCharacter.h"
 #include"Room.h"
 #include"Map.h"
 #include"GameBoard.h"
@@ -11,6 +12,7 @@ using namespace std;
 
 int main(){
     Map tablero;
+    TypeCharacter type;
 
     tablero.AddRoom(new Room("Primera", "Habitación de inicio"));
     tablero.AddRoom(new Room("Segunda", "Habitación Norte"));
@@ -24,14 +26,14 @@ int main(){
     cout << tablero.getNameRoom();
 
     if(tablero.goNorth() != NULL)
-        cout << tablero.getNameRoom();
+        type << tablero.getNameRoom();
     else
-        cout << "La habitacion no tiene conexiones al norte\n";
+        type << "La habitacion no tiene conexiones al norte\n";
 
     if (tablero.goEast() != NULL)
-        cout << tablero.getNameRoom();
+        type << tablero.getNameRoom();
     else
-        cout << "La habitacion no tiene conexiones al Este\n";
+        type << "La habitacion no tiene conexiones al Este\n";
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
